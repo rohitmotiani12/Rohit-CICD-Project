@@ -9,8 +9,6 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh 'node --version'
-                sh 'npm --version'
             }
         }
         stage('Test') {
@@ -20,13 +18,13 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'docker build -t yourname-cicd-project .'
+                sh 'docker build -t rohit-cicd-project .'
                 echo 'Deployed!'
             }
         }
         stage('Notify') {
             steps {
-                echo 'Team notified of successful build!'
+                echo 'Build successful!'
             }
         }
     }
