@@ -1,11 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
         stage('Build') {
             steps {
                 echo 'Building...'
@@ -22,14 +17,10 @@ pipeline {
                 echo 'Deployed!'
             }
         }
-        stage('Notify') {
-            steps {
-                echo 'Build successful!'
-            }
-        }
     }
     post {
         success { echo 'Pipeline SUCCESS!' }
         failure { echo 'Pipeline FAILED!' }
     }
 }
+
